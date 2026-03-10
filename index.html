@@ -340,7 +340,15 @@ this.value=this.value.toUpperCase();
 });
 
 document.getElementById("shipInput").addEventListener("input", function(){
-this.value=this.value.toUpperCase();
+
+/* chuyển chữ hoa */
+this.value = this.value.toUpperCase();
+
+/* giới hạn tối đa 6 ký tự */
+if(this.value.length > 6){
+this.value = this.value.slice(0,6);
+}
+
 });
 
 
