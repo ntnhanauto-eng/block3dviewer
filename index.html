@@ -336,6 +336,26 @@ visibility:hidden;
 }
 }
 
+.share-mini{
+
+font-size:15px;
+color:#0077cc;
+
+cursor:pointer;
+
+margin-top:6px;
+margin-bottom:10px;
+
+text-align:left;
+
+}
+
+.share-mini:hover{
+
+text-decoration:underline;
+
+}
+ 
  
 </style>
 
@@ -383,7 +403,7 @@ HD Hyundai Vietnam
 </div>
 
 </div>
-
+<div class="share-mini" onclick="shareApp()">📤 Chia sẻ</div>
 <footer class="footer">
 
 <div class="footer-line"></div>
@@ -647,24 +667,36 @@ return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i
 
 if(!isMobile()){
 
-alert("⚠ Ứng dụng 3D BLOCK hoạt động tốt nhất trên điện thoại.");
+alert("⚠ Ứng dụng 3D BLOCK VIEWER hoạt động tốt nhất trên điện thoại.");
 
 }
 
 </script>
 
+<script>
 
+function shareApp(){
+
+if(navigator.share){
+
+navigator.share({
+title:"3D BLOCK VIEWER",
+text:"3D Block Viewer - HD Hyundai Vietnam",
+url:"https://ntnhanauto-eng.github.io/block3dviewer/"
+});
+
+}else{
+
+alert("Trình duyệt không hỗ trợ chia sẻ");
+
+}
+
+}
+
+</script>
  
 </body>
 </html>
-
-
-
-
-
-
-
-
 
 
 
