@@ -475,11 +475,19 @@ HD Hyundai Vietnam
 </div>
  
 <div class="header">
+
+
+ 
 3D BLOCK VIEWER
 </div>
-
+<div class="greeting-container" style="width:100%; text-align:center; background:#e0f7fa; color:#00796b; padding:8px 0; font-size:16px; font-weight:500;">
+  <div id="greeting">Xin chào!</div>
+  <div id="currentDate" style="font-size:14px; color:#004d40; margin-top:2px;"></div>
+</div>
 <div class="container">
+ 
 
+ 
 <label>Nhập tàu</label>
 <input id="shipInput" maxlength="6" placeholder="Ví dụ: S57606">
 
@@ -516,7 +524,7 @@ HD Hyundai Vietnam
 <p>Developed by</p>
 <p> Nguyen Thanh Nhan - 201408</p>
 <p>E/R Outfitting 1</p>
-<p>Version 1.5 | © 2026</p>
+<p>Version 2.0 | © 2026</p>
 
 
 <div class="counter-wrapper">
@@ -942,17 +950,35 @@ alert("Trình duyệt không hỗ trợ chia sẻ");
 
 }
 
+function updateGreeting() {
+  const now = new Date();
+  const hours = now.getHours();
+  let greetingText = "Xin chào!";
+
+  if (hours >= 5 && hours < 12) {
+    greetingText = "Chào buổi sáng 🌞";}
+    if (hours >= 12 && hours < 15) {
+    greetingText = "Chào buổi trưa 🌞";
+  } else if (hours >= 15 && hours < 18) {
+    greetingText = "Chào buổi chiều 🌤️";
+  } else {
+    greetingText = "Chào buổi tối 🌙";
+  }
+
+  document.getElementById("greeting").innerText = greetingText;
+
+  const day = now.getDate();
+  const month = now.getMonth() + 1; // JavaScript tháng từ 0-11
+  const year = now.getFullYear();
+
+  document.getElementById("currentDate").innerText = `Hôm nay, ngày ${day} tháng ${month} năm ${year}`;
+}
+
+// Cập nhật ngay khi mở web
+updateGreeting();
+
+ 
 </script>
  
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
